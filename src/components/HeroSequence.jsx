@@ -48,10 +48,14 @@ export default function HeroSequence() {
       let offsetY = 0;
 
       if (canvasRatio < 1.0) {
-        // Mobile screen (portrait orientation e.g. iPhone SE 375x667)
-        // Scale by canvas width so 3D subject is centered and fully visible without extreme cropping
-        drawWidth = canvas.width * 1.12;
-        drawHeight = drawWidth / imgRatio;
+        // Mobile screen (portrait orientation e.g. 375x667, 390x844, 430x932)
+        // Cover full mobile viewport seamlessly as a subtle background layer
+        drawHeight = canvas.height;
+        drawWidth = canvas.height * imgRatio;
+        if (drawWidth < canvas.width) {
+          drawWidth = canvas.width;
+          drawHeight = canvas.width / imgRatio;
+        }
         offsetX = (canvas.width - drawWidth) / 2;
         offsetY = (canvas.height - drawHeight) / 2;
       } else if (canvasRatio > imgRatio) {

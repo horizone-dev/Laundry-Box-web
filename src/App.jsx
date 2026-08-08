@@ -505,9 +505,17 @@ export default function App() {
                       <span className="text-gradient-blue">We Track The Rest.</span>
                     </motion.h1>
 
-                    {/* Clean Mobile Hero Card (visible on small mobile screens like iPhone SE) */}
-                    <div className="mobile-hero-card">
-                      <img src={heroStorefrontImg} alt="Laundry POS Storefront" className="mobile-hero-img" />
+                    <p className="hero-mobile-subtitle">
+                      {t.hero_lead}
+                    </p>
+
+                    <div className="hero-mobile-actions">
+                      <a href="#contact" className="btn-primary-pill">
+                        {t.nav_contact} <ArrowRight size={14} />
+                      </a>
+                      <a href="#sandbox" className="btn-glass-pill">
+                        {t.nav_sandbox}
+                      </a>
                     </div>
                   </motion.div>
                 </div>
