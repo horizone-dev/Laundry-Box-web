@@ -1805,7 +1805,7 @@ footer {
     }
 }
 
-@media (max-width: 400px) {
+@media (max-width: 480px) {
     .mobile-menu-overlay {
         left: 10px;
         right: 10px;
@@ -1816,5 +1816,16 @@ footer {
     }
     .pos-grid-items {
         grid-template-columns: repeat(2, 1fr) !important;
+    }
+    .hero-sticky-container {
+        padding-top: 40px;
+    }
+    .hero-headline {
+        font-size: clamp(24px, 7vw, 36px) !important;
+        line-height: 1.15;
+    }
+    .hero-badge {
+        font-size: 0.7rem;
+        padding: 4px 12px;
     }
 }
