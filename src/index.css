@@ -1816,6 +1816,9 @@ footer {
 
 /* Mobile hero section specific overrides (< 768px) */
 @media (max-width: 768px) {
+    #sandbox {
+        display: none !important;
+    }
     .mobile-hero-glass-card {
         background: rgba(10, 16, 32, 0.78) !important;
         backdrop-filter: blur(28px) !important;

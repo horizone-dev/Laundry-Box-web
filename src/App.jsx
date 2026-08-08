@@ -435,7 +435,6 @@ export default function App() {
                 <div className="mobile-menu-content">
                   <a href="#features" onClick={() => setMobileMenuOpen(false)}>{t.nav_features}</a>
                   <a href="#pipeline" onClick={() => setMobileMenuOpen(false)}>{t.nav_pipeline}</a>
-                  <a href="#sandbox" onClick={() => setMobileMenuOpen(false)}>{t.nav_sandbox}</a>
                   <a href="#roi" onClick={() => setMobileMenuOpen(false)}>{t.nav_roi}</a>
                   <a href="#pricing" onClick={() => setMobileMenuOpen(false)}>{t.nav_pricing}</a>
                   
@@ -514,8 +513,8 @@ export default function App() {
                         <a href="#contact" className="btn-primary-pill">
                           {t.nav_contact} <ArrowRight size={14} />
                         </a>
-                        <a href="#sandbox" className="btn-glass-pill">
-                          {t.nav_sandbox}
+                        <a href="#features" className="btn-glass-pill">
+                          {t.nav_features}
                         </a>
                       </div>
                     </div>
