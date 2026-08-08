@@ -485,37 +485,39 @@ export default function App() {
                     className="hero-content-grid"
                     style={{ opacity: heroOpacity, scale: heroScale }}
                   >
-                    <motion.div 
-                      className="hero-badge"
-                      initial={{ opacity: 0, scale: 0.9 }}
-                      animate={{ opacity: 1, scale: 1 }}
-                      transition={{ delay: 0.2, duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-                    >
-                      <Sparkles size={12} style={{ marginRight: '6px' }} />
-                      <span>{t.hero_badge}</span>
-                    </motion.div>
-                    
-                    <motion.h1 
-                      className="hero-headline"
-                      initial={{ opacity: 0, y: 30 }}
-                      animate={{ opacity: 1, y: 0 }}
-                      transition={{ delay: 0.35, duration: 0.9, ease: [0.16, 1, 0.3, 1] }}
-                    >
-                      Run Your Laundry Business. <br />
-                      <span className="text-gradient-blue">We Track The Rest.</span>
-                    </motion.h1>
+                    <div className="mobile-hero-glass-card">
+                      <motion.div 
+                        className="hero-badge"
+                        initial={{ opacity: 0, scale: 0.9 }}
+                        animate={{ opacity: 1, scale: 1 }}
+                        transition={{ delay: 0.2, duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+                      >
+                        <Sparkles size={12} style={{ marginRight: '6px' }} />
+                        <span>{t.hero_badge}</span>
+                      </motion.div>
+                      
+                      <motion.h1 
+                        className="hero-headline"
+                        initial={{ opacity: 0, y: 30 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ delay: 0.35, duration: 0.9, ease: [0.16, 1, 0.3, 1] }}
+                      >
+                        Run Your Laundry Business. <br />
+                        <span className="text-gradient-blue">We Track The Rest.</span>
+                      </motion.h1>
 
-                    <p className="hero-mobile-subtitle">
-                      {t.hero_lead}
-                    </p>
+                      <p className="hero-mobile-subtitle">
+                        {t.hero_lead}
+                      </p>
 
-                    <div className="hero-mobile-actions">
-                      <a href="#contact" className="btn-primary-pill">
-                        {t.nav_contact} <ArrowRight size={14} />
-                      </a>
-                      <a href="#sandbox" className="btn-glass-pill">
-                        {t.nav_sandbox}
-                      </a>
+                      <div className="hero-mobile-actions">
+                        <a href="#contact" className="btn-primary-pill">
+                          {t.nav_contact} <ArrowRight size={14} />
+                        </a>
+                        <a href="#sandbox" className="btn-glass-pill">
+                          {t.nav_sandbox}
+                        </a>
+                      </div>
                     </div>
                   </motion.div>
                 </div>
