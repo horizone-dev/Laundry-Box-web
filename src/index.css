@@ -1718,3 +1718,69 @@ footer {
         padding: 0 16px !important;
     }
 }
+
+/* =========================================
+   ADDITIONAL RESPONSIVE UTILITIES & FIXES
+   ========================================= */
+.sandbox-overview-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+    margin-bottom: 24px;
+}
+
+@media (max-width: 700px) {
+    .sandbox-overview-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+.dash-table-wrapper {
+    width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    margin-top: 12px;
+}
+
+@media (max-width: 600px) {
+    .sync-visualizer {
+        height: auto;
+        flex-direction: column;
+        gap: 50px;
+        padding: 40px 20px;
+    }
+    .sync-bridge {
+        width: 2px;
+        height: 60px;
+        top: 70px;
+        left: 50%;
+        right: auto;
+        transform: translateX(-50%);
+    }
+    .sync-node-label {
+        bottom: -22px;
+    }
+    .roi-display-grid {
+        grid-template-columns: 1fr !important;
+    }
+    .roi-display-card[style*="span 2"] {
+        grid-column: span 1 !important;
+    }
+    .hero-headline {
+        font-size: clamp(26px, 7.5vw, 42px) !important;
+    }
+    .sec-title {
+        font-size: clamp(22px, 6vw, 32px) !important;
+    }
+}
+
+@media (max-width: 400px) {
+    .mobile-menu-overlay {
+        left: 10px;
+        right: 10px;
+        padding: 20px 16px;
+    }
+    .framer-logo {
+        font-size: 0.9rem;
+    }
+}

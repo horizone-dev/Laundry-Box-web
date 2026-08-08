@@ -764,7 +764,7 @@ export default function App() {
                             <span style={{ fontSize: '0.75rem', background: 'rgba(59,130,246,0.1)', color: '#60a5fa', padding: '4px 12px', borderRadius: '20px', fontWeight: 700 }}>Synced 2s ago</span>
                           </div>
 
-                          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '16px', marginBottom: '24px' }}>
+                          <div className="sandbox-overview-grid">
                             <div style={{ background: 'rgba(255,255,255,0.02)', border: '1px solid rgba(255,255,255,0.06)', borderRadius: '16px', padding: '16px' }}>
                               <span style={{ fontSize: '0.75rem', color: 'var(--text-secondary)' }}>Today's Orders</span>
                               <div style={{ fontSize: '1.5rem', fontWeight: 800, margin: '4px 0' }}>148</div>
@@ -922,40 +922,42 @@ export default function App() {
                           <h3 style={{ marginBottom: '16px' }}>Customer Credit & Balance Ledger</h3>
                           <p style={{ fontSize: '0.8rem', color: 'var(--text-secondary)', marginBottom: '24px' }}>Manage settlements, monthly credit balances, and billing logs for regular and corporate accounts.</p>
 
-                          <table className="dash-table">
-                            <thead>
-                              <tr>
-                                <th>Customer Name</th>
-                                <th>Active Account Type</th>
-                                <th>Outstanding Credit</th>
-                                <th>Credit Limit</th>
-                                <th>Ageing Overdue</th>
-                              </tr>
-                            </thead>
-                            <tbody>
-                              <tr>
-                                <td><strong>Sarah Miller</strong></td>
-                                <td>Corporate Account</td>
-                                <td style={{ color: '#f43f5e', fontWeight: 'bold' }}>$420.00</td>
-                                <td>$1,500.00</td>
-                                <td><span style={{ fontSize: '0.75rem', background: 'rgba(244,63,94,0.15)', color: '#f43f5e', padding: '2px 8px', borderRadius: '4px' }}>30 Days Overdue</span></td>
-                              </tr>
-                              <tr>
-                                <td><strong>Express Wash UAE</strong></td>
-                                <td>Partner Hotel Contract</td>
-                                <td style={{ color: '#f43f5e', fontWeight: 'bold' }}>$1,240.00</td>
-                                <td>$5,000.00</td>
-                                <td><span style={{ fontSize: '0.75rem', background: 'rgba(244,63,94,0.15)', color: '#f43f5e', padding: '2px 8px', borderRadius: '4px' }}>12 Days Overdue</span></td>
-                              </tr>
-                              <tr>
-                                <td><strong>Alex Rivera</strong></td>
-                                <td>Individual Account</td>
-                                <td style={{ color: '#10b981', fontWeight: 'bold' }}>$0.00</td>
-                                <td>$200.00</td>
-                                <td><span style={{ fontSize: '0.75rem', background: 'rgba(16,185,129,0.15)', color: '#10b981', padding: '2px 8px', borderRadius: '4px' }}>Settled</span></td>
-                              </tr>
-                            </tbody>
-                          </table>
+                          <div className="dash-table-wrapper">
+                            <table className="dash-table">
+                              <thead>
+                                <tr>
+                                  <th>Customer Name</th>
+                                  <th>Active Account Type</th>
+                                  <th>Outstanding Credit</th>
+                                  <th>Credit Limit</th>
+                                  <th>Ageing Overdue</th>
+                                </tr>
+                              </thead>
+                              <tbody>
+                                <tr>
+                                  <td><strong>Sarah Miller</strong></td>
+                                  <td>Corporate Account</td>
+                                  <td style={{ color: '#f43f5e', fontWeight: 'bold' }}>$420.00</td>
+                                  <td>$1,500.00</td>
+                                  <td><span style={{ fontSize: '0.75rem', background: 'rgba(244,63,94,0.15)', color: '#f43f5e', padding: '2px 8px', borderRadius: '4px' }}>30 Days Overdue</span></td>
+                                </tr>
+                                <tr>
+                                  <td><strong>Express Wash UAE</strong></td>
+                                  <td>Partner Hotel Contract</td>
+                                  <td style={{ color: '#f43f5e', fontWeight: 'bold' }}>$1,240.00</td>
+                                  <td>$5,000.00</td>
+                                  <td><span style={{ fontSize: '0.75rem', background: 'rgba(244,63,94,0.15)', color: '#f43f5e', padding: '2px 8px', borderRadius: '4px' }}>12 Days Overdue</span></td>
+                                </tr>
+                                <tr>
+                                  <td><strong>Alex Rivera</strong></td>
+                                  <td>Individual Account</td>
+                                  <td style={{ color: '#10b981', fontWeight: 'bold' }}>$0.00</td>
+                                  <td>$200.00</td>
+                                  <td><span style={{ fontSize: '0.75rem', background: 'rgba(16,185,129,0.15)', color: '#10b981', padding: '2px 8px', borderRadius: '4px' }}>Settled</span></td>
+                                </tr>
+                              </tbody>
+                            </table>
+                          </div>
                         </motion.div>
                       )}
                     </AnimatePresence>
