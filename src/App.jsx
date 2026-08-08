@@ -74,6 +74,7 @@ const TRANSLATIONS = {
     
     contact_eyebrow: "GET STARTED",
     contact_title: "Request a custom onboarding demo",
+    contact_desc: "Fill in your details below to request a personalized demo and setup estimate for your laundry chain.",
     form_name: "Full name",
     form_phone: "Phone number",
     form_shop: "Laundry brand name",
@@ -133,6 +134,7 @@ const TRANSLATIONS = {
     
     contact_eyebrow: "ابدأ الآن",
     contact_title: "طلب عرض توضيحي مخصص لمغسلتك",
+    contact_desc: "أدخل بياناتك للحصول على عرض توضيحي مخصص وتكلفة التشغيل لفروع مغسلتك.",
     form_name: "الاسم الكامل",
     form_phone: "رقم الهاتف",
     form_shop: "اسم المغسلة",
@@ -1369,9 +1371,12 @@ export default function App() {
                     whileInView="visible"
                     viewport={{ once: true, amount: 0.2 }}
                   >
-                    <div style={{ marginBottom: '30px' }}>
+                    <div style={{ marginBottom: '24px' }}>
                       <span className="sec-eyebrow">{t.contact_eyebrow}</span>
-                      <h2 style={{ fontSize: '2.5rem', fontWeight: 800 }}>{t.contact_title}</h2>
+                      <h2 className="contact-section-title">{t.contact_title}</h2>
+                      <p style={{ color: 'var(--text-secondary)', fontSize: '0.92rem', marginTop: '8px', lineHeight: '1.5' }}>
+                        {t.contact_desc}
+                      </p>
                     </div>
 
                     <form 
@@ -1400,17 +1405,38 @@ export default function App() {
                         setFormSent(true); 
                       }}
                     >
-                      <input type="text" name="name" placeholder={t.form_name} required />
-                      <input type="tel" name="phone" placeholder={t.form_phone} required />
-                      <input type="text" name="shop" placeholder={t.form_shop} required />
-                      <select name="branches" defaultValue="1">
-                        <option value="1">{t.form_branches1}</option>
-                        <option value="2–5">{t.form_branches2}</option>
-                        <option value="6+">{t.form_branches3}</option>
-                      </select>
-                      <textarea name="message" placeholder={t.form_message}></textarea>
-                      <button type="submit" className="btn-primary-pill" style={{ justifyContent: 'center', padding: '14px' }}>
-                        {t.form_submit}
+                      <div className="form-field-group">
+                        <label className="form-label">{t.form_name}</label>
+                        <input type="text" name="name" placeholder={t.form_name} required className="form-input" />
+                      </div>
+
+                      <div className="form-field-group">
+                        <label className="form-label">{t.form_phone}</label>
+                        <input type="tel" name="phone" placeholder={t.form_phone} required className="form-input" />
+                      </div>
+
+                      <div className="form-field-group">
+                        <label className="form-label">{t.form_shop}</label>
+                        <input type="text" name="shop" placeholder={t.form_shop} required className="form-input" />
+                      </div>
+
+                      <div className="form-field-group">
+                        <label className="form-label">Branches / عدد الفروع</label>
+                        <select name="branches" defaultValue="1" className="form-select">
+                          <option value="1">{t.form_branches1}</option>
+                          <option value="2–5">{t.form_branches2}</option>
+                          <option value="6+">{t.form_branches3}</option>
+                        </select>
+                      </div>
+
+                      <div className="form-field-group">
+                        <label className="form-label">{t.form_message}</label>
+                        <textarea name="message" placeholder={t.form_message} className="form-textarea"></textarea>
+                      </div>
+
+                      <button type="submit" className="btn-primary-pill form-submit-btn">
+                        <span>{t.form_submit}</span>
+                        <ArrowRight size={16} />
                       </button>
                       
                       {formSent && (
