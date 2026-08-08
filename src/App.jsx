@@ -412,38 +412,48 @@ export default function App() {
           </button>
         </div>
 
-        {/* Mobile Menu Overlay */}
+        {/* Mobile Menu Overlay & Backdrop */}
         <AnimatePresence>
           {mobileMenuOpen && (
-            <motion.div
-              className="mobile-menu-overlay"
-              initial={{ opacity: 0, y: -15 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: -15 }}
-              transition={{ duration: 0.25, ease: [0.16, 1, 0.3, 1] }}
-            >
-              <div className="mobile-menu-content">
-                <a href="#features" onClick={() => setMobileMenuOpen(false)}>{t.nav_features}</a>
-                <a href="#pipeline" onClick={() => setMobileMenuOpen(false)}>{t.nav_pipeline}</a>
-                <a href="#sandbox" onClick={() => setMobileMenuOpen(false)}>{t.nav_sandbox}</a>
-                <a href="#roi" onClick={() => setMobileMenuOpen(false)}>{t.nav_roi}</a>
-                <a href="#pricing" onClick={() => setMobileMenuOpen(false)}>{t.nav_pricing}</a>
-                
-                <div className="mobile-menu-separator" />
-                
-                <div className="mobile-menu-lang-toggle">
-                  <span>Language / اللغة:</span>
-                  <div className="lang-toggle">
-                    <button className={lang === 'en' ? 'active' : ''} onClick={() => { setLang('en'); setMobileMenuOpen(false); }}>EN</button>
-                    <button className={lang === 'ar' ? 'active' : ''} onClick={() => { setLang('ar'); setMobileMenuOpen(false); }}>AR</button>
+            <>
+              <motion.div
+                className="mobile-menu-backdrop"
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0 }}
+                transition={{ duration: 0.2 }}
+                onClick={() => setMobileMenuOpen(false)}
+              />
+              <motion.div
+                className="mobile-menu-overlay"
+                initial={{ opacity: 0, y: -15 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -15 }}
+                transition={{ duration: 0.25, ease: [0.16, 1, 0.3, 1] }}
+              >
+                <div className="mobile-menu-content">
+                  <a href="#features" onClick={() => setMobileMenuOpen(false)}>{t.nav_features}</a>
+                  <a href="#pipeline" onClick={() => setMobileMenuOpen(false)}>{t.nav_pipeline}</a>
+                  <a href="#sandbox" onClick={() => setMobileMenuOpen(false)}>{t.nav_sandbox}</a>
+                  <a href="#roi" onClick={() => setMobileMenuOpen(false)}>{t.nav_roi}</a>
+                  <a href="#pricing" onClick={() => setMobileMenuOpen(false)}>{t.nav_pricing}</a>
+                  
+                  <div className="mobile-menu-separator" />
+                  
+                  <div className="mobile-menu-lang-toggle">
+                    <span>Language / اللغة:</span>
+                    <div className="lang-toggle">
+                      <button className={lang === 'en' ? 'active' : ''} onClick={() => { setLang('en'); setMobileMenuOpen(false); }}>EN</button>
+                      <button className={lang === 'ar' ? 'active' : ''} onClick={() => { setLang('ar'); setMobileMenuOpen(false); }}>AR</button>
+                    </div>
                   </div>
+                  
+                  <a href="#contact" className="btn-primary-pill" onClick={() => setMobileMenuOpen(false)} style={{ justifyContent: 'center', width: '100%', marginTop: '10px' }}>
+                    {t.nav_contact}
+                  </a>
                 </div>
-                
-                <a href="#contact" className="btn-primary-pill" onClick={() => setMobileMenuOpen(false)} style={{ justifyContent: 'center', width: '100%', marginTop: '10px' }}>
-                  {t.nav_contact}
-                </a>
-              </div>
-            </motion.div>
+              </motion.div>
+            </>
           )}
         </AnimatePresence>
       </header>
