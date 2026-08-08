@@ -29,6 +29,7 @@ import {
 } from 'lucide-react';
 import './index.css';
 import HeroSequence from './components/HeroSequence';
+import heroStorefrontImg from './assets/herosection/ima.png';
 
 // Multi-language Translation dictionary
 const TRANSLATIONS = {
@@ -503,6 +504,11 @@ export default function App() {
                       Run Your Laundry Business. <br />
                       <span className="text-gradient-blue">We Track The Rest.</span>
                     </motion.h1>
+
+                    {/* Clean Mobile Hero Card (visible on small mobile screens like iPhone SE) */}
+                    <div className="mobile-hero-card">
+                      <img src={heroStorefrontImg} alt="Laundry POS Storefront" className="mobile-hero-img" />
+                    </div>
                   </motion.div>
                 </div>
 
